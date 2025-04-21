@@ -75,6 +75,7 @@ export function AuthSplitLayout({ sx, section, children }: AuthSplitLayoutProps)
       }}
     >
       <Main layoutQuery={layoutQuery}>
+      <Content layoutQuery={layoutQuery}>{children}</Content>
         <Section
           title={section?.title}
           layoutQuery={layoutQuery}
@@ -109,7 +110,6 @@ export function AuthSplitLayout({ sx, section, children }: AuthSplitLayoutProps)
             },
           ]}
         />
-        <Content layoutQuery={layoutQuery}>{children}</Content>
       </Main>
     </LayoutSection>
   );

@@ -35,7 +35,7 @@ export const _appInstalled = ['Germany', 'England', 'France', 'Korean', 'USA'].m
   })
 );
 
-export const _appAuthors = [...Array(3)].map((_, index) => ({
+export const _appAuthors = [...Array(6)].map((_, index) => ({
   id: _mock.id(index),
   name: _mock.fullName(index),
   avatarUrl: _mock.image.avatar(index),
@@ -45,14 +45,14 @@ export const _appAuthors = [...Array(3)].map((_, index) => ({
 export const _appInvoices = [...Array(5)].map((_, index) => {
   const category = ['Android', 'Mac', 'Windows', 'Android', 'Mac'][index];
 
-  const status = ['paid', 'out of date', 'progress', 'paid', 'paid'][index];
+  // const status = ['paid', 'out of date', 'progress', 'paid', 'paid'][index];
 
   return {
     id: _mock.id(index),
     invoiceNumber: `INV-199${index}`,
-    price: _mock.number.price(index),
+    // price: _mock.number.price(index),
     category,
-    status,
+    // status,
   };
 });
 

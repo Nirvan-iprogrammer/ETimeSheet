@@ -20,7 +20,21 @@ function processInput(inputValue: InputNumberValue): number | null {
 
 // ----------------------------------------------------------------------
 
-export function fNumber(inputValue: InputNumberValue, options?: Options) {
+// export function fNumber(inputValue: InputNumberValue, options?: Options) {
+//   const locale = formatNumberLocale() || DEFAULT_LOCALE;
+
+//   const number = processInput(inputValue);
+//   if (number === null) return '';
+
+//   const fm = new Intl.NumberFormat(locale.code, {
+//     minimumFractionDigits: 0,
+//     maximumFractionDigits: 2,
+//     ...options,
+//   }).format(number);
+
+//   return fm;
+// }
+export function fNumber(inputValue: InputNumberValue, options?: Options & { compact?: boolean }) {
   const locale = formatNumberLocale() || DEFAULT_LOCALE;
 
   const number = processInput(inputValue);
@@ -29,6 +43,7 @@ export function fNumber(inputValue: InputNumberValue, options?: Options) {
   const fm = new Intl.NumberFormat(locale.code, {
     minimumFractionDigits: 0,
     maximumFractionDigits: 2,
+    notation: options?.compact ? 'compact' : 'standard',
     ...options,
   }).format(number);
 

@@ -9,6 +9,11 @@ export const USER_STATUS_OPTIONS = [
   { value: 'rejected', label: 'Rejected' },
 ];
 
+export const PROJECT_STATUS_OPTIONS = [
+  { value: 'active', label: 'Active' },
+  { value: 'inactive', label: 'Inactive' }
+];
+
 export const _userAbout = {
   id: _mock.id(1),
   role: _mock.role(1),

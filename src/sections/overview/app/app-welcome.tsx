@@ -5,7 +5,8 @@ import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
 import { CONFIG } from 'src/config-global';
-import { varAlpha, bgGradient } from 'src/theme/styles';
+import { varAlpha, bgGradient, hexToRgbChannel } from 'src/theme/styles';
+// import BackgroundColor from 'src/assets/icons/backgroundColor';
 
 // ----------------------------------------------------------------------
 
@@ -19,12 +20,15 @@ type Props = BoxProps & {
 export function AppWelcome({ title, description, action, img, sx, ...other }: Props) {
   const theme = useTheme();
 
+  const channelColor = hexToRgbChannel('#491D8B');
+
+
   return (
     <Box
       sx={{
         ...bgGradient({
-          color: `to right, ${varAlpha(theme.vars.palette.grey['900Channel'], 0.88)} 0%, ${theme.vars.palette.grey[900]} 75%`,
-          imgUrl: `${CONFIG.site.basePath}/assets/background/background-5.webp`,
+          color: `to right, ${varAlpha(channelColor, 0.85)} 0%, ${varAlpha(channelColor, 0.8)} 75%`,
+          imgUrl: `${CONFIG.site.basePath}/assets/background/backgroundNew-5.webp`,
         }),
         pt: 5,
         pb: 5,

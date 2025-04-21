@@ -5,6 +5,8 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Table from '@mui/material/Table';
 import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
+// import Link from '@mui/material/Link';
 import Divider from '@mui/material/Divider';
 import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
@@ -13,14 +15,19 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import CardHeader from '@mui/material/CardHeader';
 import IconButton from '@mui/material/IconButton';
-
-import { fCurrency } from 'src/utils/format-number';
-
-import { Label } from 'src/components/label';
+// import { fCurrency } from 'src/utils/format-number';
+// import { Iconify, SocialIcon } from 'src/components/iconify';
 import { Iconify } from 'src/components/iconify';
+// import { Label } from 'src/components/label';
 import { Scrollbar } from 'src/components/scrollbar';
 import { TableHeadCustom } from 'src/components/table';
 import { usePopover, CustomPopover } from 'src/components/custom-popover';
+// import { AvatarGroup } from '@mui/material';
+// import { avatarGroupClasses } from '@mui/material';
+import AvatarGroup, { avatarGroupClasses } from '@mui/material/AvatarGroup';
+// import { _socials } from 'src/_mock';
+// import { Stack } from '@mui/material';
+
 
 // ----------------------------------------------------------------------
 
@@ -30,8 +37,8 @@ type Props = CardProps & {
   headLabel: TableHeadCustomProps['headLabel'];
   tableData: {
     id: string;
-    price: number;
-    status: string;
+    // price: number;
+    // status: string;
     category: string;
     invoiceNumber: string;
   }[];
@@ -43,7 +50,7 @@ export function AppNewInvoice({ title, subheader, tableData, headLabel, ...other
       <CardHeader title={title} subheader={subheader} sx={{ mb: 3 }} />
 
       <Scrollbar sx={{ minHeight: 402 }}>
-        <Table sx={{ minWidth: 680 }}>
+        <Table sx={{ minWidth: 526 }}>
           <TableHeadCustom headLabel={headLabel} />
 
           <TableBody>
@@ -98,6 +105,71 @@ function RowItem({ row }: RowItemProps) {
     console.info('DELETE', row.id);
   };
 
+  const shared = [
+    {
+      "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b1",
+      "name": "Jayvion Simon",
+      "email": "nannie.abernathy70@yahoo.com",
+      "avatarUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/avatar/avatar-1.webp",
+      "permission": "edit"
+    },
+    {
+      "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b2",
+      "name": "Lucian Obrien",
+      "email": "ashlynn.ohara62@gmail.com",
+      "avatarUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/avatar/avatar-2.webp",
+      "permission": "view"
+    },
+    {
+      "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b3",
+      "name": "Deja Brady",
+      "email": "milo.farrell@hotmail.com",
+      "avatarUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/avatar/avatar-3.webp",
+      "permission": "edit"
+    },
+    {
+      "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b4",
+      "name": "Harrison Stein",
+      "email": "violet.ratke86@yahoo.com",
+      "avatarUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/avatar/avatar-4.webp",
+      "permission": "view"
+    },
+    {
+      "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b5",
+      "name": "Reece Chung",
+      "email": "letha.lubowitz24@yahoo.com",
+      "avatarUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/avatar/avatar-5.webp",
+      "permission": "edit"
+    }
+  ]
+
+  // const renderSocials = (
+  //     <Card>
+  //       <CardHeader title="Social" />
+  
+  //       <Stack spacing={2} sx={{ p: 3 }}>
+  //         {_socials.map((link) => (
+  //           <Stack
+  //             key={link.name}
+  //             spacing={2}
+  //             direction="row"
+  //             sx={{ wordBreak: 'break-all', typography: 'body2' }}
+  //           >
+  //             <SocialIcon icon={link.value} />
+  //             {/* <Link color="inherit">
+  //               {link.value === 'facebook' && info.socialLinks.facebook}
+  //               {link.value === 'instagram' && info.socialLinks.instagram}
+  //               {link.value === 'linkedin' && info.socialLinks.linkedin}
+  //               {link.value === 'twitter' && info.socialLinks.twitter}
+  //             </Link> */}
+  //           </Stack>
+  //         ))}
+  //       </Stack>
+  //     </Card>
+  //   );
+  
+
+
   return (
     <>
       <TableRow>
@@ -105,9 +177,28 @@ function RowItem({ row }: RowItemProps) {
 
         <TableCell>{row.category}</TableCell>
 
-        <TableCell>{fCurrency(row.price)}</TableCell>
+        {/* <TableCell>{fCurrency(row.price)}</TableCell> */}
 
         <TableCell>
+                  <AvatarGroup
+                    max={4}
+                    sx={{
+                      display: 'inline-flex',
+                      [`& .${avatarGroupClasses.avatar}`]: {
+                        width: 24,
+                        height: 24,
+                        '&:first-of-type': { fontSize: 12 },
+                      },
+                    }}
+                  >
+                    {shared &&
+                      shared.map((person) => (
+                        <Avatar key={person.id} alt={person.name} src={person.avatarUrl} />
+                      ))}
+                  </AvatarGroup>
+                </TableCell>
+
+        {/* <TableCell>
           <Label
             variant="soft"
             color={
@@ -118,7 +209,7 @@ function RowItem({ row }: RowItemProps) {
           >
             {row.status}
           </Label>
-        </TableCell>
+        </TableCell> */}
 
         <TableCell align="right" sx={{ pr: 1 }}>
           <IconButton color={popover.open ? 'inherit' : 'default'} onClick={popover.onOpen}>

@@ -3,7 +3,7 @@ import type { ChartOptions } from 'src/components/chart';
 
 import Card from '@mui/material/Card';
 import Divider from '@mui/material/Divider';
-import { useTheme } from '@mui/material/styles';
+// import { useTheme } from '@mui/material/styles';
 import CardHeader from '@mui/material/CardHeader';
 
 import { fNumber } from 'src/utils/format-number';
@@ -26,14 +26,16 @@ type Props = CardProps & {
 };
 
 export function AppCurrentDownload({ title, subheader, chart, ...other }: Props) {
-  const theme = useTheme();
+  // const theme = useTheme();
 
-  const chartColors = chart.colors ?? [
-    theme.palette.primary.lighter,
-    theme.palette.primary.light,
-    theme.palette.primary.dark,
-    theme.palette.primary.darker,
-  ];
+  // const chartColors = chart.colors ?? [
+  //   theme.palette.primary.lighter,
+  //   theme.palette.primary.light,
+  //   theme.palette.primary.dark,
+  //   theme.palette.primary.darker,
+  // ];
+
+  const chartColors = chart.colors ?? [ '#300275', '#763FC7','#E1CDFF'];
 
   const chartSeries = chart.series.map((item) => item.value);
 

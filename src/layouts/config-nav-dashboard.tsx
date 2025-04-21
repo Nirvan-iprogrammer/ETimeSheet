@@ -50,13 +50,13 @@ export const navData = [
   {
     subheader: 'Overview',
     items: [
-      { title: 'App', path: paths.dashboard.root, icon: ICONS.dashboard },
-      { title: 'Ecommerce', path: paths.dashboard.general.ecommerce, icon: ICONS.ecommerce },
-      { title: 'Analytics', path: paths.dashboard.general.analytics, icon: ICONS.analytics },
+      { title: 'Home', path: paths.dashboard.root, icon: ICONS.dashboard },
+      { title: 'My Timesheet', path: paths.dashboard.general.ecommerce, icon: ICONS.user },
+      { title: 'Reports', path: paths.dashboard.general.analytics, icon: ICONS.user },
       { title: 'Banking', path: paths.dashboard.general.banking, icon: ICONS.banking },
-      { title: 'Booking', path: paths.dashboard.general.booking, icon: ICONS.booking },
-      { title: 'File', path: paths.dashboard.general.file, icon: ICONS.file },
-      { title: 'Course', path: paths.dashboard.general.course, icon: ICONS.course },
+      // { title: 'Booking', path: paths.dashboard.general.booking, icon: ICONS.booking },
+      // { title: 'File', path: paths.dashboard.general.file, icon: ICONS.file },
+      // { title: 'Course', path: paths.dashboard.general.course, icon: ICONS.course },
     ],
   },
   /**
@@ -79,7 +79,7 @@ export const navData = [
         ],
       },
       {
-        title: 'Product',
+        title: 'Project',
         path: paths.dashboard.product.root,
         icon: ICONS.product,
         children: [
@@ -90,7 +90,7 @@ export const navData = [
         ],
       },
       {
-        title: 'Order',
+        title: 'Timesheet',
         path: paths.dashboard.order.root,
         icon: ICONS.order,
         children: [
@@ -99,7 +99,7 @@ export const navData = [
         ],
       },
       {
-        title: 'Invoice',
+        title: 'Technology',
         path: paths.dashboard.invoice.root,
         icon: ICONS.invoice,
         children: [
@@ -110,7 +110,7 @@ export const navData = [
         ],
       },
       {
-        title: 'Blog',
+        title: 'Departments',
         path: paths.dashboard.post.root,
         icon: ICONS.blog,
         children: [
@@ -121,7 +121,7 @@ export const navData = [
         ],
       },
       {
-        title: 'Job',
+        title: 'Persona',
         path: paths.dashboard.job.root,
         icon: ICONS.job,
         children: [
@@ -162,7 +162,7 @@ export const navData = [
    * Item State
    */
   {
-    subheader: 'Misc',
+    subheader: 'Settings',
     items: [
       {
         // default roles : All roles can see this entry.

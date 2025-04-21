@@ -40,7 +40,7 @@ export function NavVertical({
     <>
       {slots?.topArea ?? (
         <Box sx={{ pl: 3.5, pt: 2.5, pb: 1 }}>
-          <Logo />
+          <Logo isNavMini={isNavMini} />
         </Box>
       )}
 
@@ -56,7 +56,7 @@ export function NavVertical({
     <>
       {slots?.topArea ?? (
         <Box sx={{ display: 'flex', justifyContent: 'center', py: 2.5 }}>
-          <Logo />
+          <Logo isNavMini={isNavMini}  />
         </Box>
       )}
 

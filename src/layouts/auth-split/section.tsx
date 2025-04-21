@@ -2,12 +2,12 @@ import type { BoxProps } from '@mui/material/Box';
 import type { Breakpoint } from '@mui/material/styles';
 
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Tooltip from '@mui/material/Tooltip';
+// import Link from '@mui/material/Link';
+// import Tooltip from '@mui/material/Tooltip';
 import { useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 
-import { RouterLink } from 'src/routes/components';
+// import { RouterLink } from 'src/routes/components';
 
 import { CONFIG } from 'src/config-global';
 import { varAlpha, bgGradient } from 'src/theme/styles';
@@ -33,7 +33,7 @@ export function Section({
   layoutQuery,
   methods,
   title = 'Manage the job',
-  imgUrl = `${CONFIG.site.basePath}/assets/illustrations/illustration-dashboard.webp`,
+  imgUrl = `${CONFIG.site.basePath}/assets/illustrations/Image Container.webp`,
   subtitle = 'More effectively with optimized workflows.',
   ...other
 }: SectionProps) {
@@ -49,7 +49,7 @@ export function Section({
         px: 3,
         pb: 3,
         width: 1,
-        maxWidth: 480,
+        maxWidth: 845,
         display: 'none',
         position: 'relative',
         pt: 'var(--layout-header-desktop-height)',
@@ -64,7 +64,7 @@ export function Section({
       }}
       {...other}
     >
-      <div>
+      {/* <div>
         <Typography variant="h3" sx={{ textAlign: 'center' }}>
           {title}
         </Typography>
@@ -74,16 +74,22 @@ export function Section({
             {subtitle}
           </Typography>
         )}
-      </div>
+      </div> */}
 
       <Box
         component="img"
         alt="Dashboard illustration"
         src={imgUrl}
-        sx={{ width: 1, aspectRatio: '4/3', objectFit: 'cover' }}
+        sx={{
+          width: 1,
+          // aspectRatio: '4/3',
+          objectFit: 'cover',
+          borderRadius: '56px 32px 32px 56px',
+          border: '1px solid #ccc', // or your desired color
+        }}
       />
 
-      {!!methods?.length && method && (
+      {/* {!!methods?.length && method && (
         <Box component="ul" gap={2} display="flex">
           {methods.map((option) => {
             const selected = method === option.label.toLowerCase();
@@ -119,7 +125,7 @@ export function Section({
             );
           })}
         </Box>
-      )}
+      )} */}
     </Box>
   );
 }

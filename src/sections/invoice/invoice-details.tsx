@@ -1,6 +1,6 @@
 import type { IInvoice } from 'src/types/invoice';
 
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -17,12 +17,9 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import { fDate } from 'src/utils/format-time';
 import { fCurrency } from 'src/utils/format-number';
 
-import { INVOICE_STATUS_OPTIONS } from 'src/_mock';
-
 import { Label } from 'src/components/label';
 import { Scrollbar } from 'src/components/scrollbar';
 
-import { InvoiceToolbar } from './invoice-toolbar';
 
 // ----------------------------------------------------------------------
 
@@ -44,9 +41,9 @@ type Props = {
 export function InvoiceDetails({ invoice }: Props) {
   const [currentStatus, setCurrentStatus] = useState(invoice?.status);
 
-  const handleChangeStatus = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setCurrentStatus(event.target.value);
-  }, []);
+  // const handleChangeStatus = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setCurrentStatus(event.target.value);
+  // }, []);
 
   const renderTotal = (
     <>
@@ -162,12 +159,12 @@ export function InvoiceDetails({ invoice }: Props) {
 
   return (
     <>
-      <InvoiceToolbar
+      {/* <InvoiceToolbar
         invoice={invoice}
         currentStatus={currentStatus || ''}
         onChangeStatus={handleChangeStatus}
         statusOptions={INVOICE_STATUS_OPTIONS}
-      />
+      /> */}
 
       <Card sx={{ pt: 5, px: 5 }}>
         <Box
